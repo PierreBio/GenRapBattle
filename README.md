@@ -17,6 +17,6 @@ Small experience made under Unity 2022.3.9f1 and including a natural language pr
 Our battle sources are taken from RapPad.co and are undoublty not under Creative Commons License. Therefore, you cannot use this work for any commercial project as long as you use these battles as sources.
 
 ## Credits
-RapPad.co and all contributors of this website for text balle generation.
+RapPad.co and all contributors of this website for text battle generation.
 
-All the graphics are inspired from this jam game [Jam Contender](https://v3.globalgamejam.org/2019/games/jam-contenders-epic-rap-battle) as long as the soundtracks.
+All the graphics and sounds **are inspired or taken** from this jam game [Jam Contender](https://v3.globalgamejam.org/2019/games/jam-contenders-epic-rap-battle).
