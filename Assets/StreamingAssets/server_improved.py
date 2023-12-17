@@ -4,12 +4,10 @@ import logging
 import subprocess
 
 def install_required_libraries():
-    # Liste des bibliothèques à installer (remplacez par vos bibliothèques requises)
-    required_libraries = ['keras', 'numpy', 'tensorflow', 'torch==2.1.1+cu121', 'zmq']
+    # Liste des bibliothèques standard à installer
+    required_libraries = ['keras', 'numpy', 'tensorflow', 'zmq']
 
-    # PyTorch and CUDA toolkit installation command, split into parts
-    pytorch_with_cuda = ["torch==2.1.1+cu121", "torchvision", "torchaudio", "-f", "https://download.pytorch.org/whl/torch_stable.html"]
-
+    # Installation des bibliothèques standard
     for library in required_libraries:
         try:
             subprocess.check_call([sys.executable, "-m", "pip", "install", library])
@@ -17,11 +15,14 @@ def install_required_libraries():
             print(f"Erreur lors de l'installation de la bibliothèque {library}")
             sys.exit(1)
 
-    #try:
-        #subprocess.check_call([sys.executable, "-m", "pip", "install", "--upgrade", *pytorch_with_cuda])
-    #except subprocess.CalledProcessError:
-        #print("Erreur lors de l'installation de PyTorch avec CUDA.")
-        #sys.exit(1)
+    # Commande d'installation de PyTorch avec CUDA
+    pytorch_with_cuda = ["torch==2.1.1+cu121", "torchvision", "torchaudio", "-f", "https://download.pytorch.org/whl/torch_stable.html"]
+
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", *pytorch_with_cuda])
+    except subprocess.CalledProcessError:
+        print("Erreur lors de l'installation de PyTorch avec CUDA.")
+        sys.exit(1)
 
 # Appel de la fonction pour installer les bibliothèques requises
 install_required_libraries()
